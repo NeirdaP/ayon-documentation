@@ -252,7 +252,7 @@ def create(self, instance_data, source_data):
 
 
 #### *AutoCreator*
-Creator that is triggered on reset of create context. Can be used for families that are expected to be created automatically without artist interaction (e.g. **workfile**). Method `create` is triggered after collecting all creators.
+Creator that is triggered on reset of create context. Can be used for product types that are expected to be created automatically without artist interaction (e.g. **workfile**). Method `create` is triggered after collecting all creators.
 
 :::important
 **AutoCreator** has implemented **remove_instances** to do nothing as removing of auto created instances would lead to creating new instance immediately or on refresh.
@@ -509,7 +509,11 @@ When there is a known error that can't be fixed by the user (e.g. can't connect 
 ### Plugin extension
 Publish plugins can be extended by additional logic when inheriting from `OpenPypePyblishPluginMixin` which can be used as mixin (additional inheritance of class). Publish plugins that inherit from this mixin can define attributes that will be shown in **CreatedInstance**. One of the most important usages is to be able turn on/off optional plugins.
 
-Attributes are defined by the return value of `get_attribute_defs` method. Attribute definitions are for families defined in plugin's `families` attribute if it's instance plugin or for whole context if it's context plugin. To convert existing values (or to remove legacy values) can be re-implemented `convert_attribute_values`. Default implementation just converts the values to right types.
+Attributes are defined by the return value of `get_attribute_defs` method. Attribute definitions are : 
+ - for product types defined in plugin's `families` attribute, if it's an instance plugin 
+ - for whole context, if it's a context plugin.
+
+To convert existing values (or to remove legacy values) can be re-implemented `convert_attribute_values`. Default implementation just converts the values to right types.
 
 :::Important
 Values of publish attributes from created instance are never removed automatically so implementing this method is the best way to remove legacy data or convert them to new data structure.
@@ -583,7 +587,7 @@ Main window of publisher shows instances and their values, collected by creators
 #### *Instances views*
 List of instances always contains an `Options` item which is used to show attributes of context plugins. Values from the item are saved and loaded using [host implementation](#required-functions-in-host-implementation) **get_context_data** and **update_context_data**. Instances are grouped by family and can be shown in card view (single selection) or list view (multi selection).
 
-Instance view has at the bottom 3 buttons. Plus sign opens [create dialog](#create-dialog), bin removes selected instances and stripes swap card and list view.
+Instance view has, at the bottom, 3 buttons. Plus sign opens [create dialog](#create-dialog), bin removes selected instances and stripes swap card and list view.
 
 #### *Context options*
 It is possible to change variant or asset and task context of instances at the top part but all changes there must be confirmed. Confirmation will trigger recalculation of product names and all new data are stored to instances.

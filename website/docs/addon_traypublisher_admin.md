@@ -20,7 +20,7 @@ Refer to Settings related to [Working with settings](admin_settings) for more de
 
 ## Creator Plugins
 
-Contains list of implemented families to show in middle menu in Tray Publisher. Each plugin must contain:
+Contains list of implemented product types to show in middle menu in Tray Publisher. Each plugin must contain:
 
 - **Product type**
 - **Label**

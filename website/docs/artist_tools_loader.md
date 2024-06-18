@@ -58,9 +58,9 @@ import loaderVideo2 from './assets/video/tools_loader_02.mp4'
 ### Filter Assets and Products by name
 To filter assets/products by name, type the name or part of it in the filter input box. Only assets/products containing the string remain visible
 
-### Filter Products by Family
+### Filter Products by Type
 
-To filter [products](artist_concepts.md#product) by their [families](artist_publish.md#families) use the families list where you can check families you want to see or uncheck families you are not interested in.
+To filter [products](artist_concepts.md#product) by their [types](artist_publish.md#families) use the product types list where you can check product types you want to see or uncheck product types you are not interested in.
 
 import loaderVideo3 from './assets/video/tools_loader_03.mp4'
 
