@@ -148,7 +148,7 @@ Building a workfile using a template designed by users. Helping to assert homoge
 
  **1. Make a template**
 
-Make your template. Add families and everything needed for your tasks. Here is an example template for the modeling task using a placeholder to import a gauge.
+Make your template. Add product types and everything needed for your tasks. Here is an example template for the modeling task using a placeholder to import a gauge.
 
 ![maya outliner](assets/maya/admin/workfile-outliner.png)
 
